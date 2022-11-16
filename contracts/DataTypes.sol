@@ -18,14 +18,23 @@ contract DataTypes {
     // address defines the Ethereum account address
     address owner = msg.sender; // msg.sender is the Ethereum address of the account that sent this transaction
     
-    bytes32 bMsg = "hello"; // store string with size 
+    /*
+    - Use byte1 to bytes32 for arbitrary-length raw byte data.
+    - Byte use less gas.
+    */ 
+    bytes32 bMsg = "hello";
+    
+    /*
+    - Use string for any arbitrary-length string (UTF-8) data that is longer than 32 bytes.
+    - Use string for dynamically allocated data.
+    */
     string sMsg = "hello"; 
 
     // Getter function: get values and return them
     function getStateVariables() public view returns (uint, int, uint, bool, address, bytes32, string memory) {
         return (x, i, j, isEthereumCool, owner, bMsg, sMsg); 
     }
-    // Setter function: are given input values, then they do something with them
+    // Setter function: are given input values, then they do something with them.
     function setMsg(bytes32 newValue)  private returns (bytes32) {
         bMsg = newValue;
     }
