@@ -3,7 +3,7 @@ pragma solidity ^0.8.17;
 
 /*
 * @title Solidity data types
-* @author Michael Solomon
+* @author Cong Le
 * @notice A simply smart contract to demonstrate simple data types available in Solidity
 * 
 */
