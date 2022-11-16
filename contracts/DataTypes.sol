@@ -37,6 +37,7 @@ contract DataTypes {
     // Setter function: are given input values, then they do something with them.
     function setMsg(bytes32 newValue)  private returns (bytes32) {
         bMsg = newValue;
+        return bMsg;
     }
 
 }
